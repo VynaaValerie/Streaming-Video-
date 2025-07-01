@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SimpleStream - Professional Video Streaming</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>SimpleStream</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search-input" placeholder="Search videos...">
+      <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Stream Your Favorite Videos</h2>
+        <p>High quality streaming with no interruptions</p>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <h3 id="section-title">Trending Videos</h3>
+      <div class="video-grid" id="video-grid">
+        <!-- Videos will be loaded here -->
+      </div>
+    </section>
+
+    <div class="video-player-container" id="video-player-container">
+      <div class="video-player">
+        <div class="close-btn" id="close-btn">&times;</div>
+        <video id="video-player" controls></video>
+        <div class="video-info">
+          <h3 id="video-title"></h3>
+          <p id="video-views"></p>
+          <p id="video-duration"></p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 SimpleStream. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
