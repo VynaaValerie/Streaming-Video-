@@ -1,0 +1,17 @@
+{
+  "name": "simple-streaming-app",
+  "version": "1.0.0",
+  "description": "A simple video streaming web application",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.2",
+    "cors": "^2.8.5"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
