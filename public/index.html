@@ -3,51 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SimpleStream - Professional Video Streaming</title>
+  <title>StreamVibe - Professional Video Streaming</title>
+  <meta name="description" content="Stream your favorite videos in high quality">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
   <header>
     <div class="logo">
-      <h1>SimpleStream</h1>
+      <h1>StreamVibe</h1>
+      <p>Your Ultimate Streaming Experience</p>
     </div>
     <div class="search-container">
-      <input type="text" id="search-input" placeholder="Search videos...">
-      <button id="search-btn"><i class="fas fa-search"></i></button>
+      <input type="text" id="search-input" placeholder="Search videos..." aria-label="Search videos">
+      <button id="search-btn" aria-label="Search">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#" class="active" id="home-link">Home</a></li>
+        <li><a href="#" id="trending-link">Trending</a></li>
+        <li><a href="#" id="categories-link">Categories</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main>
     <section class="hero">
       <div class="hero-content">
-        <h2>Stream Your Favorite Videos</h2>
-        <p>High quality streaming with no interruptions</p>
+        <h2>Unlimited Streaming</h2>
+        <p>Discover and watch your favorite videos in stunning quality</p>
+        <div class="hero-search">
+          <input type="text" id="hero-search-input" placeholder="What would you like to watch?">
+          <button id="hero-search-btn">Search</button>
+        </div>
       </div>
     </section>
 
-    <section class="video-section">
-      <h3 id="section-title">Trending Videos</h3>
+    <section class="content-section">
+      <div class="section-header">
+        <h3 id="section-title">Featured Videos</h3>
+        <div class="view-more" id="view-more">View More</div>
+      </div>
+      
       <div class="video-grid" id="video-grid">
         <!-- Videos will be loaded here -->
+        <div class="skeleton-loading">
+          <div class="skeleton-thumbnail"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-meta"></div>
+        </div>
+        <!-- Repeat skeleton for loading state -->
+        <div class="skeleton-loading">
+          <div class="skeleton-thumbnail"></div>
+          <div class="skeleton-text"></div>
+          <div class="skeleton-meta"></div>
+        </div>
       </div>
     </section>
 
-    <div class="video-player-container" id="video-player-container">
-      <div class="video-player">
-        <div class="close-btn" id="close-btn">&times;</div>
-        <video id="video-player" controls></video>
+    <div class="video-player-overlay" id="video-player-overlay">
+      <div class="video-player-container">
+        <div class="video-player-controls">
+          <button class="close-btn" id="close-btn" aria-label="Close video player">
+            <i class="fas fa-times"></i>
+          </button>
+          <button class="fullscreen-btn" id="fullscreen-btn" aria-label="Toggle fullscreen">
+            <i class="fas fa-expand"></i>
+          </button>
+        </div>
+        <video id="video-player" controls playsinline>
+          Your browser does not support the video tag.
+        </video>
         <div class="video-info">
-          <h3 id="video-title"></h3>
-          <p id="video-views"></p>
-          <p id="video-duration"></p>
+          <h3 id="video-title">Video Title</h3>
+          <div class="video-meta">
+            <span id="video-views"><i class="fas fa-eye"></i> 0 views</span>
+            <span id="video-duration"><i class="fas fa-clock"></i> 0:00</span>
+            <span id="video-quality"><i class="fas fa-hd"></i> HD</span>
+          </div>
+          <div class="video-actions">
+            <button class="action-btn like-btn"><i class="far fa-thumbs-up"></i> Like</button>
+            <button class="action-btn share-btn"><i class="fas fa-share"></i> Share</button>
+            <button class="action-btn save-btn"><i class="far fa-bookmark"></i> Save</button>
+          </div>
         </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2023 SimpleStream. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h3>About StreamVibe</h3>
+        <p>StreamVibe is a professional video streaming platform that brings you the best content from around the web.</p>
+      </div>
+      <div class="footer-section links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Trending</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-section social">
+        <h3>Connect With Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2023 StreamVibe. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
   </footer>
 
   <script src="script.js"></script>
